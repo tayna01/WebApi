@@ -14,9 +14,11 @@ namespace API.Infraestrutura.Repositories
             _context.SaveChanges();
         }
 
-        public List<EmployeeDTO> Get(int pageNumber, int pageQuantity)
+        public List<EmployeeDTO> GetPaginator(int pageNumber, int pageQuantity)
         {
-            return _context.Employees.Skip(pageNumber * pageQuantity)
+            int skipCount = (pageNumber - 1) * pageQuantity;
+            return _context.Employees
+                .Skip(skipCount)
                 .Take(pageQuantity)
                 .Select(b =>
                     new EmployeeDTO()
@@ -24,10 +26,11 @@ namespace API.Infraestrutura.Repositories
                         Id = b.id,
                         NameEmployee = b.name,
                         Photo = b.photo
-                    }).ToList();
+                    })
+                .ToList();
         }
 
-        public Employee? Get(int id)
+        public Employee? GetPaginator(int id)
         {
             return _context.Employees.Find(id);
         }
