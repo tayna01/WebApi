@@ -10,7 +10,7 @@ namespace API.Controllers
         [HttpPost]
         public IActionResult Auth(string username, string password)
         {
-            if (username == "filipe" && password == "123456")
+            if (username == "tayna" && password == "123456")
             {
                 var token = TokenService.GenerateToken(new Domain.Model.EmployeeAggregate.Employee());
                 return Ok(token);

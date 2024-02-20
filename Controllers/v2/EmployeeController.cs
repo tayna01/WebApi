@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
-namespace API.Controllers.v1
+namespace API.Controllers.v2    
 {
     [ApiController]
     [Route("api/v{version:apiVersion}/employee")]
-    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeRepository _employeeRepository;
@@ -58,16 +58,11 @@ namespace API.Controllers.v1
         {
             _logger.Log(LogLevel.Error, "Teve um Erro");
 
-            if (pageNumber <= 0 || pageQuantity <= 0)
-            {
-                return BadRequest("Número de página ou quantidade de páginas inválidos.");
-            }
-
-            var employees = _employeeRepository.GetPaginator(pageNumber, pageQuantity);
+            var employess = _employeeRepository.GetPaginator(pageNumber, pageQuantity);
 
             _logger.LogInformation("Teste");
 
-            return Ok(employees);
+            return Ok(employess);
         }
 
         [HttpGet]
