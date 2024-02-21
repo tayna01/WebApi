@@ -31,9 +31,11 @@ Este projeto está em constante desenvolvimento e, como tal, pode conter erros, 
 - [ ] Endpoint para adicionar novo recurso
 - [ ] Endpoint para listar recursos
 
-## Contribuição
+## Informações
 
-Contribuições são bem-vindas! Se você encontrar algum problema ou tiver sugestões para melhorias, sinta-se à vontade para abrir uma issue ou enviar um pull request.
+Este projeto foi desenvolvido com base no tutorial "Web API C#" do canal [FilipeRibeiroDev](https://github.com/FilipeRibeiroDev). O tutorial foi uma fonte valiosa de aprendizado durante o desenvolvimento desta WebApi. Você pode encontrar o repositório original do tutorial [aqui](https://github.com/FilipeRibeiroDev/web-api-dotnet-core).
+
+
 
 
 
